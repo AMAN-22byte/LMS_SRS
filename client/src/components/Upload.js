@@ -36,8 +36,7 @@ const Upload = () => {
       setLoading(true);
       const videoUrl = await uploadFile('video');
       if (videoUrl) {
-        // Uncomment this line if you have a backend setup to save the video URL
-        // await axios.post(`${process.env.REACT_APP_BACKEND_BASEURL}/api/videos`, { videoUrl });
+        // await axios.post(`${process.env.REACT_APP_BACKEND_BASEURL}/api/videos`, { videoUrl });   //---> this is for backend
         console.log('Upload Success:', videoUrl);
       } else {
         console.error('Failed to get video URL');
