@@ -1,5 +1,9 @@
 import Video from  "../models/Video.js";
 
+import express from 'express';
+const router = express.Router();
+
+
 export const createVideo=async (req,res,next) => {
     const {imgUrl,videoUrl}=req.body;
 
@@ -19,3 +23,6 @@ export const createVideo=async (req,res,next) => {
         next(error);
     }
 }
+
+
+export default router;

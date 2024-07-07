@@ -1,5 +1,9 @@
 import {v2 as cloudinary} from "cloudinary";
 
+import express from 'express';
+const router = express.Router();
+
+
 cloudinary.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
     api_key: process.env.CLOUDINARY_API_KEY,
@@ -26,7 +30,11 @@ export const generateSignature = (req,res,next) => {
         res.status(200).json ({timestamp,signature})
     }
     catch(error){
-        res.status(500).json ({error: error.message});
+        console.log(error);
+        res.status(500);
         next(error);
     }
 }
+
+
+export default router;

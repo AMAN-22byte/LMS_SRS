@@ -1,8 +1,11 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import {connectDB} from "../config/db";
-import {errorHandler } from "./middlewares/error";
+import {connectDB} from "./config/db.js";
+import {errorHandler } from "./middlewares/error.js";
+import videoRoutes from "./routes/video.js";
+import signUploadRoutes from "./routes/sign-upload.js";
+
 
 dotenv.config();  // attach env var in
 

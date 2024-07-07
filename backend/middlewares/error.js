@@ -1,8 +1,19 @@
-export const errorHandler=(err,req,res,next) => {
-    const statusCode = res.statusCode === 200? 500 :res.statusCode;
+// export const errorHandler=(err,req,res,next) => {
+//     const statusCode = res.statusCode === 200? 500 :res.statusCode;
 
-    return res.status(statusCode).json({
-        sucess:false,
-        error:err.message,
+//     return res.status(statusCode).json({
+//         sucess:false,
+//         error:err.message,
+//     });
+// };
+
+
+export const errorHandler = (err, req, res, next) => {
+    const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
+    res.status(statusCode);
+    res.json({
+      message: err.message,
+      stack: process.env.NODE_ENV === 'production' ? null : err.stack,
     });
-};
+  };
+  
