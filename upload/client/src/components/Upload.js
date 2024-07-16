@@ -16,7 +16,7 @@ function Upload() {
     formData.append('instructor', instructor);
     formData.append('courseName', courseName);
     formData.append('subject', subject);
-    axios.post('http://localhost:3000/upload', formData)
+    axios.post('http://localhost:3001/upload', formData)
       .then(res => {
         console.log(res.data);
       })

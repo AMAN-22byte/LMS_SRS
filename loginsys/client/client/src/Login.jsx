@@ -15,9 +15,8 @@ function Login() {
     e.preventDefault();
     axios.post('http://localhost:3001/login', { email, password })
       .then(res => {
-        if (res.data.Status === 'success') {
+        if (res.data.status === 'success') {
           if (res.data.role === "admin") {
-            // navigate('../../../../client/src/components/Upload.jsx');
             window.location.href = 'http://localhost:3000/admin-upload'; 
           }
         } else {
