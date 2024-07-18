@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>DASH Video Streaming</h1>
+      <h1>Video Streaming Arena</h1>
       <VideoPlayer url={videoUrl} />
     </div>
   );

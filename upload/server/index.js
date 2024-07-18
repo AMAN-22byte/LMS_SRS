@@ -14,13 +14,11 @@ const app = express();
 app.use(cors({ origin: 'http://localhost:3000', methods: ['GET', 'POST'], credentials: true }));
 app.use(express.json());
 
-// Ensure the files directory exists
 const uploadDir = path.join(__dirname, 'files');
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir);
 }
 
-// Mongoose Schema and Model
 const uploadSchema = new mongoose.Schema({
     title: String,
     instructor: String,
