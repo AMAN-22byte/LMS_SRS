@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import dashjs from 'dashjs';
+import './style.css';
 
 const VideoPlayer = ({ url }) => {
   const videoRef = useRef(null);
@@ -14,11 +15,11 @@ const VideoPlayer = ({ url }) => {
   }, [url]);
 
   return (
-    <div>
+    <div className="video-container">
       <video
         ref={videoRef}
         controls
-        style={{ width: '100%', height: 'auto' }}
+        className="video-player"
       />
     </div>
   );
